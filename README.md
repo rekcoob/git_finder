@@ -3,16 +3,18 @@
 > React app using [github_api](https://developer.github.com/v3/) to search Github profiles, with Typescript, Context Api & Hooks
 
 ## Github API connection setup
+
 Add your GITHUB_CLIENT_ID and GITHUB_CLIENT_SECRET to .env file
 
 ## Quick Start
+
 ```
 # Install Dependencies
-yarn install
+npm install
 
 # Run App
-yarn start
+npm run dev
 
 # Build App
-yarn build
+npm run build
 ```
