@@ -54,7 +54,7 @@ export const User: React.FC = () => {
         <i className='fas fa-times-circle text-danger' />
       )} */}
       {hireable ? (
-        <span aria-label='hireable'>✔️</span>
+        <span aria-label='hireable'>✅</span>
       ) : (
         <span aria-label='not hireable'>❌</span>
       )}
@@ -76,7 +76,7 @@ export const User: React.FC = () => {
               <p>{bio}</p>
             </>
           )}
-          <a href={html_url} className='btn btn-dark my-1'>
+          <a href={html_url} className='btn btn-primary my-1'>
             Visit Github Profile
           </a>
           <ul>

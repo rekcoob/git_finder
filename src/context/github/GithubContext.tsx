@@ -1,10 +1,10 @@
 import React, { createContext, Dispatch, useReducer, ReactNode } from 'react'
 import { githubReducer } from './githubReducer'
-import { GithubActionType, GithubStateType } from './githubTypes'
+import { GithubActionType, GithubStateType, IUser } from './githubTypes'
 
 const initialState = {
   users: [],
-  user: {},
+  user: {} as IUser,
   repos: [],
   loading: false,
 }

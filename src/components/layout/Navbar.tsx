@@ -12,10 +12,13 @@ export const Navbar: React.FC<Props> = ({
   icon = 'fab fa-github',
 }) => {
   return (
-    <nav className='navbar bg-primary'>
-      <h1>
-        <i className={icon} /> {title}
-      </h1>
+    <nav className='navbar'>
+      <Link to='/'>
+        <h1>
+          <i className={icon} /> {title}
+        </h1>
+      </Link>
+
       <ul>
         <li>
           <Link to='/'>Home</Link>

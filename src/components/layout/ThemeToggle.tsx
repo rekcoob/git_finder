@@ -1,17 +1,19 @@
 // ThemeToggle.tsx
-import React, { useState } from 'react'
+import React from 'react'
+import { useTheme } from '../../context/ThemeContext'
 
 export const ThemeToggle: React.FC = () => {
-  const [isDarkMode, setIsDarkMode] = useState(false)
-
-  const toggleTheme = () => {
-    setIsDarkMode((prevMode) => !prevMode)
-    // Optionally, you can add logic here to apply classes or manage global theme state
-  }
+  const { theme, toggleTheme } = useTheme()
 
   return (
-    <button onClick={toggleTheme} className='btn btn-toggle-theme'>
-      {isDarkMode ? 'Light Mode' : 'Dark Mode'}
-    </button>
+    <label className='toggle'>
+      <input
+        type='checkbox'
+        id='toggleDarkMode'
+        onClick={toggleTheme}
+        checked={theme === 'dark'}
+      />
+      <span className='slider'></span>
+    </label>
   )
 }
