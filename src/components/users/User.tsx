@@ -1,5 +1,5 @@
 import React, { useEffect, useContext } from 'react'
-import { useParams, Link } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { GithubContext } from '../../context/github/GithubContext'
 import { getUser, getUserRepos } from '../../context/github/githubActions'
 import { Spinner } from '../layout/Spinner'
@@ -44,15 +44,10 @@ export const User: React.FC = () => {
 
   return (
     <>
-      <Link to='/' className='btn btn-light'>
+      {/* <Link to='/' className='btn btn-light'>
         Back To Search
-      </Link>
+      </Link> */}
       Hireable:{' '}
-      {/* {hireable ? (
-        <i className='fas fa-check text-success' />
-      ) : (
-        <i className='fas fa-times-circle text-danger' />
-      )} */}
       {hireable ? (
         <span aria-label='hireable'>✅</span>
       ) : (

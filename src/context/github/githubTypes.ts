@@ -35,6 +35,7 @@ export type GithubStateType = {
 }
 
 export type GithubActionType =
+  | { type: 'GET_TOP_USERS'; payload: IUser[] }
   | { type: 'SEARCH_USERS'; payload: IUser[] }
   | { type: 'GET_USER'; payload: IUser }
   | { type: 'CLEAR_USERS' }
@@ -42,6 +43,7 @@ export type GithubActionType =
   | { type: 'SET_LOADING' }
 
 export enum ACTIONS {
+  GET_TOP_USERS = 'GET_TOP_USERS',
   SEARCH_USERS = 'SEARCH_USERS',
   GET_USER = 'GET_USER',
   CLEAR_USERS = 'CLEAR_USERS',

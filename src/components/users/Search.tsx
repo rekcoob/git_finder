@@ -1,12 +1,12 @@
 import React, { useState, useContext, ChangeEvent } from 'react'
 import { GithubContext } from '../../context/github/GithubContext'
 import { AlertContext } from '../../context/alert/AlertContext'
-import { searchUsers, clearUsers } from './../../context/github/githubActions'
+import { searchUsers } from './../../context/github/githubActions'
 import { setAlert } from '../../context/alert/alertActions'
 
 export const Search: React.FC = () => {
   const {
-    state: { users },
+    // state: { users },
     dispatch,
   } = useContext(GithubContext)
   const alertContext = useContext(AlertContext)
@@ -42,14 +42,14 @@ export const Search: React.FC = () => {
         />
       </form>
 
-      {users.length > 0 && (
+      {/* {users.length > 0 && (
         <button
           className='btn btn-dark btn-block'
           onClick={() => clearUsers(dispatch)}
         >
           Clear
         </button>
-      )}
+      )} */}
     </div>
   )
 }

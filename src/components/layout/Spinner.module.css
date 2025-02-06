@@ -1,0 +1,22 @@
+.spinnerContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh; /* Prispôsob výške podľa potreby */
+}
+
+.spinner {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 12px solid;
+  /* border-color: #474bff #0000; */
+  border-color: var(--primary-color) #0000;
+  animation: spin 0.6s infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(0.5turn);
+  }
+}

@@ -74,13 +74,17 @@
 }
 .toggle input:checked + .slider {
   background-color: var(--primary-color);
-  box-shadow: 0 0 15px var(--primary-color);
+  /* box-shadow: 0 0 15px var(--primary-color); */
 }
 .toggle input:checked + .slider:before {
   transform: translateX(30px);
   /* background-color: #000; */
   background-color: #20232a;
   box-shadow: 0 0 10px var(--primary-color);
+}
+
+.card h3 a:hover {
+  color: var(--primary-color);
 }
 
 /* Mobile Styles */
