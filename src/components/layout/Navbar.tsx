@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { ThemeToggle } from './ThemeToggle'
+import { ColorPicker } from './ColorPicker'
 
 type Props = {
   icon?: string
@@ -19,15 +20,15 @@ export const Navbar: React.FC<Props> = ({
           <i className={icon} /> {title}
         </h1>
       </Link>
-
-      <ul>
+      <ColorPicker />
+      {/* <ul>
         <li>
           <Link to='/'>Home</Link>
         </li>
         <li>
           <Link to='/about'>About</Link>
         </li>
-      </ul>
+      </ul> */}
       <ThemeToggle />
     </nav>
   )

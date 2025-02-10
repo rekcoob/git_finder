@@ -15,15 +15,15 @@ interface ColorSchemeContextType {
 const colorSchemes: { [key: string]: { primary: string; secondary: string } } =
   {
     blue: {
-      primary: '#0056b3',
-      secondary: '#1e84ff',
+      primary: '#474bff ',
+      secondary: '#980ffa',
     },
     green: {
-      primary: 'green',
-      secondary: 'lightgreen',
+      primary: '#26a69a',
+      secondary: 'green',
     },
-    orange: {
-      primary: 'orange',
+    red: {
+      primary: '#007bff',
       secondary: '#ffcc80',
     },
   }

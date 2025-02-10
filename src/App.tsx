@@ -13,28 +13,33 @@ import { Alert } from './components/layout/Alert'
 import { User } from './components/users/User'
 
 import './App.css'
+import { ColorSchemeProvider } from './context/ColorSchemeContext'
+// import Footer from './components/layout/Footer'
 
 const App = () => {
   return (
     <ThemeProvider>
-      <GithubProvider>
-        <AlertProvider>
-          <Router>
-            <div className='App'>
-              <Navbar />
-              <div className='container'>
-                <Alert />
-                <Routes>
-                  <Route path='/' element={<HomePage />} />
-                  <Route path='/about' element={<AboutPage />} />
-                  <Route path='/user/:login' element={<User />} />
-                  <Route path='*' element={<NotFoundPage />} />
-                </Routes>
+      <ColorSchemeProvider>
+        <GithubProvider>
+          <AlertProvider>
+            <Router>
+              <div className='App'>
+                <Navbar />
+                <div className='container'>
+                  <Alert />
+                  <Routes>
+                    <Route path='/' element={<HomePage />} />
+                    <Route path='/about' element={<AboutPage />} />
+                    <Route path='/user/:login' element={<User />} />
+                    <Route path='*' element={<NotFoundPage />} />
+                  </Routes>
+                  {/* <Footer /> */}
+                </div>
               </div>
-            </div>
-          </Router>
-        </AlertProvider>
-      </GithubProvider>
+            </Router>
+          </AlertProvider>
+        </GithubProvider>
+      </ColorSchemeProvider>
     </ThemeProvider>
   )
 }

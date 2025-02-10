@@ -24,6 +24,7 @@ const getTopUsers = async (dispatch: Dispatch<GithubActionType>) => {
     // `https://api.github.com/search/users?q=followers:>1000&sort=followers&order=desc&per_page=10&client_secret=${githubClientSecret}`
     `https://api.github.com/search/users?q=followers:>1000&sort=followers&order=desc&per_page=18`
   )
+  console.log(res.data)
   dispatch({
     type: ACTIONS.GET_TOP_USERS,
     payload: res.data.items,
@@ -56,6 +57,7 @@ const getUser = async (
   const res = await axios.get(
     `https://api.github.com/users/${username}?client_id=${githubClientId}&client_secret=${githubClientSecret}`
   )
+  console.log(res.data)
 
   dispatch({
     type: ACTIONS.GET_USER,
@@ -73,6 +75,8 @@ const getUserRepos = async (
   const res = await axios.get(
     `https://api.github.com/users/${username}/repos?per_page=5&sort=created:asc&client_id=${githubClientId}&client_secret=${githubClientSecret}`
   )
+
+  console.log(res.data)
 
   dispatch({
     type: ACTIONS.GET_REPOS,

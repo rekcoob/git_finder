@@ -10,7 +10,8 @@
 }
 
 .card:hover {
-  box-shadow: 0 4px 16px #007bff;
+  /* box-shadow: 0 4px 16px #007bff; */
+  box-shadow: 0 4px 16px var(--primary-color);
   /* transform: scale(1.05); */
 }
 
@@ -26,7 +27,7 @@
 }
 
 .button {
-  background: #007bff;
+  background: var(--primary-color);
   color: white;
   padding: 8px 12px;
   border-radius: 5px;
