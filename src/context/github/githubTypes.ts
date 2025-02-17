@@ -25,6 +25,10 @@ export interface IUserRepo {
   id: number
   name: string
   html_url: string
+  description: string
+  language: string
+  stargazers_count: string
+  forks_count: string
 }
 
 export type GithubStateType = {

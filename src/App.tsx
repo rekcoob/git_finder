@@ -4,16 +4,16 @@ import { GithubProvider } from './context/github/GithubContext'
 import { AlertProvider } from './context/alert/AlertContext'
 import { ThemeProvider } from './context/ThemeContext'
 
-import { Navbar } from './components/layout/Navbar'
-import { HomePage } from './components/pages/HomePage'
-import { AboutPage } from './components/pages/AboutPage'
-import { NotFoundPage } from './components/pages/NotFoundPage'
+import { Navbar } from './components/Navbar'
+import { HomePage } from './pages/HomePage'
+import { NotFoundPage } from './pages/NotFoundPage'
 
-import { Alert } from './components/layout/Alert'
-import { User } from './components/users/User'
+import { Alert } from './components/Alert'
+// import { User } from './components/users/User'
 
 import './App.css'
 import { ColorSchemeProvider } from './context/ColorSchemeContext'
+import UserDetails from './pages/UserDetails'
 // import Footer from './components/layout/Footer'
 
 const App = () => {
@@ -25,12 +25,13 @@ const App = () => {
             <Router>
               <div className='App'>
                 <Navbar />
+                {/* <UserDetails /> */}
                 <div className='container'>
                   <Alert />
                   <Routes>
                     <Route path='/' element={<HomePage />} />
-                    <Route path='/about' element={<AboutPage />} />
-                    <Route path='/user/:login' element={<User />} />
+                    {/* <Route path='/user/:login' element={<User />} /> */}
+                    <Route path='/user/:login' element={<UserDetails />} />
                     <Route path='*' element={<NotFoundPage />} />
                   </Routes>
                   {/* <Footer /> */}

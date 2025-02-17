@@ -1,6 +1,6 @@
 // ThemeToggle.tsx
 import React from 'react'
-import { useColorScheme } from '../../context/ColorSchemeContext'
+import { useColorScheme } from '../context/ColorSchemeContext'
 import styles from './ColorPicker.module.css'
 
 export const ColorPicker: React.FC = () => {

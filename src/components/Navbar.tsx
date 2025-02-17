@@ -10,7 +10,7 @@ type Props = {
 
 export const Navbar: React.FC<Props> = ({
   // title = '🔍 Github Searcher',
-  title = 'Github Search 🔍',
+  title = '🧩 Git_Finder',
   icon = 'fab fa-github',
 }) => {
   return (

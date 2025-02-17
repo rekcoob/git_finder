@@ -1,6 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 /* Global Styles */
 :root {
   --primary-color: #7d1f8d;
@@ -36,18 +42,11 @@
   color: var(--primary-color);
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
 body {
   /* font-family: 'Roboto Mono', monospace; */
   /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif; */
-
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans',
     Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
   font-size: 1rem;
@@ -352,21 +351,6 @@ img {
   border: #ccc solid 1px;
 }
 
-.round-img {
-  border-radius: 50%;
-}
-
-/* Forms */
-input {
-  margin: 1.2rem 0;
-}
-
-.form-text {
-  display: block;
-  margin-top: 0.3rem;
-  color: #888;
-}
-
 input[type='text'],
 input[type='email'],
 input[type='password'],
@@ -379,17 +363,12 @@ textarea {
   padding: 0.4rem;
   font-size: 1.2rem;
   border-radius: 4px;
-  transition: all 0.3s ease-in-out;
+  /* transition: all 0.3s ease-in-out; */
 }
 
 input[type='submit'],
 button {
   font: inherit;
-}
-
-input[type='text']:focus {
-  border-color: var(--primary-color);
-  box-shadow: 0 1px 2px rgba(0, 123, 123, 0.25);
 }
 
 table th,
@@ -400,6 +379,14 @@ table td {
 
 table th {
   background: var(--light-color);
+}
+
+.border {
+  border: 1px solid var(--primary-color);
+}
+
+.round-img {
+  border-radius: 50%;
 }
 
 /* Mobile Styles */

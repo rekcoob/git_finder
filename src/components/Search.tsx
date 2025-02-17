@@ -1,8 +1,8 @@
 import React, { useState, useContext, ChangeEvent } from 'react'
-import { GithubContext } from '../../context/github/GithubContext'
-import { AlertContext } from '../../context/alert/AlertContext'
-import { searchUsers } from './../../context/github/githubActions'
-import { setAlert } from '../../context/alert/alertActions'
+import { GithubContext } from '../context/github/GithubContext'
+import { AlertContext } from '../context/alert/AlertContext'
+import { searchUsers } from './../context/github/githubActions'
+import { setAlert } from '../context/alert/alertActions'
 
 export const Search: React.FC = () => {
   const {
@@ -27,10 +27,9 @@ export const Search: React.FC = () => {
 
   return (
     <div>
-      <form onSubmit={onSubmit} className='form'>
+      <form onSubmit={onSubmit} className='search-form'>
         <input
           type='text'
-          name='text'
           placeholder='Search Users...'
           value={text}
           onChange={onChange}
