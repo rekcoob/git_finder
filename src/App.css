@@ -15,8 +15,15 @@
 }
 .navbar h1 {
   color: var(--text-color);
+  display: block;
   /* text-shadow: 10px 10px 10px var(--primary-color); */
 }
+.navbar-controls {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .navbar h1:hover {
   /* color: var(--primary-color); */
   /* background-color: var(--primary-color);

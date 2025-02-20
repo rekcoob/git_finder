@@ -22,13 +22,10 @@ Follow these commands to run and build the project:
 npm install
 
 # Run Development Server
-npm dev
+npm run dev
 
 # Build for Production
-npm build
-
-# Start Production Server
-npm start
+npm run build
 ```
 
 ## GitHub API Connection Setup

@@ -1,6 +1,7 @@
 // src/pages/UserDetails.jsx
-import { useEffect, useContext } from 'react'
+import { useContext } from 'react'
 import { useParams } from 'react-router-dom'
+import { useQuery } from '@tanstack/react-query'
 import { GithubContext } from '../context/github/GithubContext'
 import { getUser, getUserRepos } from '../context/github/githubActions'
 import { Spinner } from '../components/Spinner'
@@ -9,16 +10,23 @@ import { IUserRepo } from '../context/github/githubTypes'
 export default function UserDetails() {
   const { login } = useParams()
   const {
-    state: { loading, user, repos },
+    state: { user, repos },
     dispatch,
   } = useContext(GithubContext)
 
-  useEffect(() => {
-    if (login) {
-      getUser(dispatch, login)
-      getUserRepos(dispatch, login)
-    }
-  }, [login, dispatch])
+  // Query for fetching user data using an existing action
+  const { isLoading: isUserLoading } = useQuery({
+    queryKey: ['user', login], // Unique query key for caching and refetching
+    queryFn: () => getUser(dispatch, login!), // Fetch user data
+    enabled: !!login, // Only run the query if login exists
+  })
+
+  // Query for fetching user repositories using an existing action
+  const { isLoading: isReposLoading } = useQuery({
+    queryKey: ['userRepos', login], // Unique query key for caching and refetching
+    queryFn: () => getUserRepos(dispatch, login!), // Fetch user repositories
+    enabled: !!login, // Only run the query if login exists
+  })
 
   // Destructure User
   const {
@@ -31,9 +39,9 @@ export default function UserDetails() {
     followers,
     public_repos,
     hireable,
-  } = user || {} // Optional chaining in case user is undefined
+  } = user || {}
 
-  if (loading) return <Spinner />
+  if (isUserLoading || isReposLoading) return <Spinner />
   // console.log(user)
 
   return (
@@ -56,7 +64,6 @@ export default function UserDetails() {
 
         <div style={{ gridColumn: 'span 2' }} className='p-1 repo-list'>
           {repos.map((repo: IUserRepo) => (
-            // <RepoItem key={repo.id} repo={repo} />
             <div className=''>
               <h3 className='repo-name'>
                 <a href={repo.html_url} className='repo-name'>

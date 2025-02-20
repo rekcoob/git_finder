@@ -9,26 +9,15 @@ type Props = {
 }
 
 export const Navbar: React.FC<Props> = ({
-  // title = '🔍 Github Searcher',
   title = '🧩 Git_Finder',
-  icon = 'fab fa-github',
+  // icon = 'fab fa-github',
 }) => {
   return (
     <nav className='navbar'>
-      <Link to='/'>
-        <h1>
-          <i className={icon} /> {title}
-        </h1>
+      <Link to='/' className='logo'>
+        <h1>{title}</h1>
       </Link>
       <ColorPicker />
-      {/* <ul>
-        <li>
-          <Link to='/'>Home</Link>
-        </li>
-        <li>
-          <Link to='/about'>About</Link>
-        </li>
-      </ul> */}
       <ThemeToggle />
     </nav>
   )
